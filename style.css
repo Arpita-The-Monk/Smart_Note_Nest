@@ -1,0 +1,220 @@
+/* =========================
+   General Settings
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f8fc;
+    color: #222;
+}
+
+
+/* =========================
+   Navbar
+========================= */
+
+nav {
+    height: 70px;
+    background-color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 60px;
+
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    font-size: 15px;
+}
+
+.nav-links a:hover {
+    color: #6c63ff;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-actions button {
+    border: none;
+    background: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+
+/* =========================
+   Hero Section
+========================= */
+
+.hero {
+    text-align: center;
+
+    padding: 80px 20px 60px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.create-btn {
+    border: none;
+    background-color: #6c63ff;
+    color: white;
+
+    padding: 14px 25px;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+.create-btn:hover {
+    background-color: #574fd6;
+}
+
+
+/* =========================
+   Overview
+========================= */
+
+.overview {
+    padding: 20px 60px;
+}
+
+.overview h2,
+.recent-notes h2 {
+    margin-bottom: 20px;
+}
+
+.overview-cards {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.overview-card {
+    background-color: white;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    border: 1px solid #e5e5e5;
+
+    text-align: center;
+}
+
+.overview-card h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.overview-card p {
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.overview-card strong {
+    font-size: 28px;
+}
+
+
+/* =========================
+   Recent Notes
+========================= */
+
+.recent-notes {
+    padding: 40px 60px 70px;
+}
+
+.notes-container {
+    background-color: white;
+
+    min-height: 180px;
+
+    border-radius: 12px;
+
+    border: 1px solid #e5e5e5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty-message {
+    text-align: center;
+    color: #777;
+}
+
+.empty-message p:first-child {
+    font-size: 20px;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+
+/* =========================
+   Responsive Design
+========================= */
+
+@media (max-width: 768px) {
+
+    nav {
+        padding: 0 20px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .overview {
+        padding: 20px;
+    }
+
+    .overview-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .recent-notes {
+        padding: 30px 20px;
+    }
+}
