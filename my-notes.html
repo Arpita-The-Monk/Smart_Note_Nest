@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Notes - Smart Note Nest</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav>
+
+        <div class="logo">
+            📝 Smart Note Nest
+        </div>
+
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="my-notes.html">My Notes</a>
+
+            <a href="categories.html">Categories</a>
+
+           <a href="favorites.html">Favorites</a>
+
+        </div>
+
+
+        <div class="nav-actions">
+
+            <button id="search-btn">
+           🔍
+          </button>
+
+<button id="theme-btn">
+    🌙
+</button>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- My Notes Section -->
+
+    <section class="my-notes-section">
+
+        <h1>My Notes</h1>
+
+        <p class="subtitle">
+            Manage all your notes in one place.
+        </p>
+
+
+
+        <!-- Search and Filter -->
+
+        <div class="notes-controls">
+
+            <input
+                type="text"
+                id="search-input"
+                placeholder="Search your notes..."
+            >
+
+
+            <select id="category-filter">
+
+                <option value="all">
+                    All Categories
+                </option>
+
+                <option value="Study">
+                    Study
+                </option>
+
+                <option value="Personal">
+                    Personal
+                </option>
+
+                <option value="Ideas">
+                    Ideas
+                </option>
+
+                <option value="Projects">
+                    Projects
+                </option>
+
+                <option value="Others">
+                    Others
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <!-- Notes Container -->
+
+        <div
+            class="my-notes-container"
+            id="my-notes-container">
+        </div>
+
+
+    </section>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

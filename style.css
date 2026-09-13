@@ -98,6 +98,9 @@ nav {
     font-size: 16px;
 
     cursor: pointer;
+
+    text-decoration: none;
+    display: inline-block;
 }
 
 .create-btn:hover {
@@ -217,4 +220,669 @@ nav {
     .recent-notes {
         padding: 30px 20px;
     }
+}
+
+/* =========================
+   Create Note Page
+========================= */
+
+.create-note-section {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.create-note-section h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 35px;
+}
+
+#note-form {
+    background-color: white;
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid #e5e5e5;
+}
+
+#note-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    margin-top: 20px;
+}
+
+#note-form input,
+#note-form select,
+#note-form textarea {
+    width: 100%;
+    padding: 13px;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+#note-form input:focus,
+#note-form select:focus,
+#note-form textarea:focus {
+    border-color: #6c63ff;
+}
+
+#note-form textarea {
+    min-height: 250px;
+    resize: vertical;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+
+    margin-top: 30px;
+}
+
+.cancel-btn,
+.save-btn {
+    padding: 12px 22px;
+    border-radius: 8px;
+
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.cancel-btn {
+    text-decoration: none;
+    background-color: #eee;
+    color: #333;
+}
+
+.save-btn {
+    border: none;
+    background-color: #6c63ff;
+    color: white;
+}
+
+.save-btn:hover {
+    background-color: #574fd6;
+}
+
+/* =========================
+   Note Cards
+========================= */
+
+.notes-container {
+    padding: 25px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: start;
+}
+
+.note-card {
+    background-color: white;
+
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+
+    padding: 20px;
+
+    min-height: 200px;
+
+    transition: 0.2s;
+}
+
+.note-card:hover {
+    transform: translateY(-3px);
+}
+
+.note-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+.note-card-header h3 {
+    font-size: 19px;
+}
+
+.favorite-btn {
+    border: none;
+    background: none;
+
+    font-size: 24px;
+
+    cursor: pointer;
+}
+
+.note-content {
+    color: #666;
+
+    line-height: 1.6;
+
+    margin-bottom: 20px;
+}
+
+.note-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: auto;
+}
+
+.note-card-footer span {
+    font-size: 14px;
+    color: #666;
+}
+
+.note-card-footer button {
+    border: none;
+
+    background-color: #f0f0f0;
+
+    padding: 7px 10px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    margin-left: 5px;
+}
+
+.note-card-footer button:hover {
+    background-color: #ddd;
+}
+
+
+/* Responsive Note Cards */
+
+@media (max-width: 900px) {
+
+    .notes-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .notes-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =========================
+   My Notes Page
+========================= */
+
+.my-notes-section {
+    max-width: 1200px;
+
+    margin: 50px auto;
+
+    padding: 20px;
+}
+
+.my-notes-section h1 {
+    font-size: 36px;
+
+    margin-bottom: 10px;
+}
+
+.notes-controls {
+    display: flex;
+
+    gap: 15px;
+
+    margin: 30px 0;
+}
+
+#search-input {
+    flex: 1;
+
+    padding: 14px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+#category-filter {
+    width: 220px;
+
+    padding: 14px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    background-color: white;
+
+    outline: none;
+}
+
+#search-input:focus,
+#category-filter:focus {
+    border-color: #6c63ff;
+}
+
+.my-notes-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.empty-message {
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    padding: 60px 20px;
+
+    color: #666;
+}
+
+
+/* Responsive */
+
+@media (max-width: 900px) {
+
+    .my-notes-container {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .notes-controls {
+        flex-direction: column;
+    }
+
+    #category-filter {
+        width: 100%;
+    }
+
+    .my-notes-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =========================
+   Favorites Page
+========================= */
+
+.favorite-remove-btn {
+    border: none;
+
+    background: none;
+
+    font-size: 24px;
+
+    cursor: pointer;
+}
+
+.favorite-remove-btn:hover {
+    transform: scale(1.1);
+}
+
+/* =========================
+   Categories Page
+========================= */
+
+.categories-section {
+
+    max-width: 1200px;
+
+    margin: 50px auto;
+
+    padding: 20px;
+
+}
+
+.categories-section h1 {
+
+    font-size: 36px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.category-cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin-top: 35px;
+
+}
+
+
+.category-card {
+
+    background-color: white;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 15px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    transition: 0.2s;
+
+}
+
+
+.category-card:hover {
+
+    transform: translateY(-5px);
+
+}
+
+
+.category-icon {
+
+    font-size: 45px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.category-card h3 {
+
+    font-size: 22px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.category-card p {
+
+    color: #666;
+
+    margin-bottom: 20px;
+
+}
+
+
+.view-category-btn {
+
+    border: none;
+
+    background-color: #f0f0f0;
+
+    padding: 10px 16px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+}
+
+
+.view-category-btn:hover {
+
+    background-color: #ddd;
+
+}
+
+
+/* Responsive */
+
+@media (max-width: 900px) {
+
+    .category-cards {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .category-cards {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+/* ========================================
+   Dark Mode
+======================================== */
+
+body.dark-mode {
+    background-color: #1e1e1e;
+    color: #f5f5f5;
+}
+
+body.dark-mode nav {
+    background-color: #2b2b2b;
+}
+
+body.dark-mode .logo,
+body.dark-mode .nav-links a {
+    color: #f5f5f5;
+}
+
+body.dark-mode .note-card,
+body.dark-mode .category-card,
+body.dark-mode .overview-card,
+body.dark-mode .note-details-content {
+    background-color: #2b2b2b;
+    color: #f5f5f5;
+}
+
+body.dark-mode .note-card p,
+body.dark-mode .category-card p,
+body.dark-mode .subtitle {
+    color: #cccccc;
+}
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+    background-color: #2b2b2b;
+    color: #ffffff;
+    border-color: #555555;
+}
+
+/* ========================================
+   Responsive Design
+======================================== */
+
+@media (max-width: 768px) {
+
+    /* Navbar */
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .nav-actions {
+        display: flex;
+        gap: 10px;
+    }
+
+
+    /* Main Sections */
+
+    .hero,
+    .my-notes-section,
+    .categories-section,
+    .note-details-section,
+    .create-note-section {
+        margin: 30px 15px;
+        padding: 15px;
+    }
+
+
+    /* Overview Cards */
+
+    .overview-cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+
+    /* Category Cards */
+
+    .category-cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+
+    /* Search and Filter */
+
+    .notes-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #search-input,
+    #category-filter {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+
+    /* Note Cards */
+
+    .note-card {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+
+    .note-card-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+
+    /* Details Buttons */
+
+    .detail-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .detail-buttons button {
+        width: 100%;
+    }
+
+}
+
+/* ========================================
+   Final UI Polish
+======================================== */
+
+button {
+    font-family: inherit;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: translateY(-1px);
+}
+
+
+/* Note Card Buttons */
+
+.view-btn,
+.edit-btn,
+.delete-btn {
+    border: none;
+    padding: 8px 14px;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+
+/* Note Details Buttons */
+
+.detail-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.detail-buttons button {
+    border: none;
+    padding: 11px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+/* Create Note Button */
+
+.save-btn {
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.save-btn:hover {
+    transform: translateY(-2px);
+}
+
+
+/* Category Button */
+
+.view-category-btn {
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.view-category-btn:hover {
+    transform: translateY(-2px);
 }

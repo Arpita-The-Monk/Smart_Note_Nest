@@ -20,15 +20,22 @@
 
         <div class="nav-links">
             <a href="index.html">Home</a>
-            <a href="#">My Notes</a>
-            <a href="#">Categories</a>
-            <a href="#">Favorites</a>
+            <a href="my-notes.html">My Notes</a>
+            <a href="categories.html">Categories</a>
+            <a href="favorites.html">Favorites</a>
         </div>
 
         <div class="nav-actions">
-            <button>🔍</button>
-            <button>🌙</button>
-        </div>
+
+    <button id="search-btn">
+        🔍
+    </button>
+
+    <button id="theme-btn">
+        🌙
+    </button>
+
+</div>
     </nav>
 
 
@@ -41,9 +48,9 @@
             Create, organize and manage your notes easily.
         </p>
 
-        <button class="create-btn">
-            + Create New Note
-        </button>
+        <a href="create-note.html" class="create-btn">
+         + Create New Note
+        </a>
 
     </section>
 
@@ -53,27 +60,27 @@
 
         <h2>Quick Overview</h2>
 
-        <div class="overview-cards">
+       <div class="overview-cards">
 
-            <div class="overview-card">
-                <h3>📝</h3>
-                <p>Total Notes</p>
-                <strong>0</strong>
-            </div>
+    <div class="overview-card">
+        <h3>📝</h3>
+        <p>Total Notes</p>
+        <strong id="total-notes">0</strong>
+    </div>
 
-            <div class="overview-card">
-                <h3>⭐</h3>
-                <p>Favorites</p>
-                <strong>0</strong>
-            </div>
+    <div class="overview-card">
+        <h3>⭐</h3>
+        <p>Favorites</p>
+        <strong id="total-favorites">0</strong>
+    </div>
 
-            <div class="overview-card">
-                <h3>📂</h3>
-                <p>Categories</p>
-                <strong>0</strong>
-            </div>
+    <div class="overview-card">
+        <h3>📂</h3>
+        <p>Categories</p>
+        <strong id="total-categories">0</strong>
+    </div>
 
-        </div>
+</div>
 
     </section>
 

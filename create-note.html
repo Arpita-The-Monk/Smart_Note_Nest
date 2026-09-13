@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Note - Smart Note Nest</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav>
+
+        <div class="logo">
+            📝 Smart Note Nest
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="my-notes.html">My Notes</a>
+            <a href="categories.html">Categories</a>
+            <a href="favorites.html">Favorites</a>
+        </div>
+
+        <div class="nav-actions">
+            <button id="search-btn">
+    🔍
+ </button>
+
+<button id="theme-btn">
+    🌙
+</button>
+        </div>
+
+    </nav>
+
+
+    <!-- Create Note Section -->
+    <section class="create-note-section">
+
+        <h1>Create New Note</h1>
+
+        <p class="subtitle">
+            Write down your thoughts and ideas.
+        </p>
+
+
+        <!-- Note Form -->
+        <form id="note-form">
+
+            <!-- Title -->
+            <label for="note-title">Note Title</label>
+
+            <input
+                type="text"
+                id="note-title"
+                placeholder="Enter your note title"
+                required
+            >
+
+
+            <!-- Category -->
+            <label for="note-category">Category</label>
+
+            <select id="note-category">
+
+                <option value="Study">Study</option>
+                <option value="Personal">Personal</option>
+                <option value="Ideas">Ideas</option>
+                <option value="Projects">Projects</option>
+                <option value="Others">Others</option>
+
+            </select>
+
+
+            <!-- Note Content -->
+            <label for="note-content">Your Note</label>
+
+            <textarea
+                id="note-content"
+                placeholder="Write your note here..."
+                required
+            ></textarea>
+
+
+            <!-- Buttons -->
+            <div class="form-buttons">
+
+                <a href="index.html" class="cancel-btn">
+                    Cancel
+                </a>
+
+                <button type="submit" class="save-btn">
+                    Save Note
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
