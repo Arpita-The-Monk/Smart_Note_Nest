@@ -221,6 +221,27 @@ if (notesContainer) {
 }
 
 // ========================================
+// View Note from Home Page
+// ========================================
+
+const homeViewButtons =
+    document.querySelectorAll(".view-btn");
+
+homeViewButtons.forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+        const noteId =
+            button.dataset.id;
+
+        window.location.href =
+            `note-details.html?id=${noteId}`;
+
+    });
+
+});
+
+// ========================================
 // Delete Note
 // ========================================
 
@@ -1091,39 +1112,60 @@ const detailDeleteButton =
 
 if (detailFavoriteButton) {
 
+    const urlParams =
+        new URLSearchParams(window.location.search);
+
+    const noteId =
+        Number(urlParams.get("id"));
+
+    let notes =
+        JSON.parse(localStorage.getItem("notes")) || [];
+
+    // Show current favorite status
+    const currentNote =
+        notes.find(function(note) {
+            return note.id === noteId;
+        });
+
+    if (currentNote && currentNote.favorite) {
+        detailFavoriteButton.textContent = "★ Favorite";
+    } else {
+        detailFavoriteButton.textContent = "☆ Favorite";
+    }
+
+
+    // Favorite button click
     detailFavoriteButton.addEventListener("click", function() {
-
-        const urlParams =
-            new URLSearchParams(window.location.search);
-
-        const noteId =
-            Number(urlParams.get("id"));
-
 
         let notes =
             JSON.parse(localStorage.getItem("notes")) || [];
 
-
         notes = notes.map(function(note) {
 
             if (note.id === noteId) {
-
                 note.favorite = !note.favorite;
-
             }
 
             return note;
 
         });
 
-
         localStorage.setItem(
             "notes",
             JSON.stringify(notes)
         );
 
+        // Update button immediately
+        const updatedNote =
+            notes.find(function(note) {
+                return note.id === noteId;
+            });
 
-        location.reload();
+        if (updatedNote.favorite) {
+            detailFavoriteButton.textContent = "★ Favorite";
+        } else {
+            detailFavoriteButton.textContent = "☆ Favorite";
+        }
 
     });
 
